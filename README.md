@@ -25,7 +25,7 @@ Create a detailed implementation plan, that focuses on possible pitfalls and pro
 ```
 
 ### Refining the plan
-Copilot started checking the linked migration guide and then iterated with me over some questions, e.g. to provide more links to API documentation for the affected components. After a few iterations, it created a detailed implementation plan that I could follow to update the code.
+Copilot started checking the linked migration guide and then iterated with me over some questions, e.g. to provide more links to API documentation for the affected components. After a few iterations, it created a detailed implementation plan.
 
 ### Implementation
 Following the implementation plan, copilot updated the dependencies and code step by step, without me needing to give feedback. It also ran `ng build` and `ng test` iteratively and fixed the issues that came up.
