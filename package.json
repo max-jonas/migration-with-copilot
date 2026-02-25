@@ -28,6 +28,7 @@
     "@angular/forms": "^20.3.0",
     "@angular/platform-browser": "^20.3.0",
     "@angular/router": "^20.3.0",
+    "@orbis-u/nice-fluorine-icons": "^3.1.49",
     "@ucfw/auth": "^4.0.9",
     "@ucfw/charts": "^4.0.9",
     "@ucfw/common": "^4.0.9",
