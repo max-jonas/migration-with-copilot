@@ -28,6 +28,13 @@
     "@angular/forms": "^20.3.0",
     "@angular/platform-browser": "^20.3.0",
     "@angular/router": "^20.3.0",
+    "@ucfw/auth": "^4.0.9",
+    "@ucfw/charts": "^4.0.9",
+    "@ucfw/common": "^4.0.9",
+    "@ucfw/components": "^4.0.9",
+    "@ucfw/i18n": "^4.0.9",
+    "@ucfw/plugin-interfaces": "^4.0.9",
+    "@ucfw/styles": "^4.0.9",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
