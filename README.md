@@ -1,59 +1,39 @@
 # MigrationWithCopilot
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.5.
+This project serves as a demonstration of how to use GitHub Copilot to assist in migrating code from one cfw major version to another. It was initially built with @ucfw versions 4.0.9 and updated to 5.0.0-beta.7 using GitHub Copilot.
 
-## Development server
+It includes a simple demo page with some components that were affected by breaking changes in the new major version:
 
-To start a local development server, run:
+- `u-alert`: this was using a deprecated API which was removed in v4
+- `u-calendar`: this component was entirely removed in v5 and needs to be replaced with `u-new-calendar`
+- `u-tree-select`: this component was moved to the `@ucfw/experimental` package which was introduced in v5
 
-```bash
-ng serve
+## How this was done
+
+### Setup
+I used the Copilot extension in VS Code in **Plan Mode** and with **Claude Opus 4.6**, which is the most capable model at the time of writing. 
+
+### Prompt
+Following prompt was used initially:
+
+```
+I need to update the @ucfw scoped dependencies of this project from 4.0.9 to 5.0.0-beta.7. These dependencies are company-internal packages. As this is a major version change, there will likely be breaking changes that may break this app.
+We do have an internal documentation website that includes versioned changelogs, migration guides, api documentation and many demos. You can access the migration guide from version 4 to 5 here: https://orbis-u-guide.dedalus.lan/v5/#/overview/migration/v4-v5
+If you need more references from this guide, DO NOT try to discover it yourself. Ask me and i will provide the correct links to you.
+
+Create a detailed implementation plan, that focuses on possible pitfalls and problems and that also makes sure to test that the project still builds afterwards. 
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Refining the plan
+Copilot started checking the linked migration guide and then iterated with me over some questions, e.g. to provide more links to API documentation for the affected components. After a few iterations, it created a detailed implementation plan that I could follow to update the code.
 
-## Code scaffolding
+### Implementation
+Following the implementation plan, copilot updated the dependencies and code step by step, without me needing to give feedback. It also ran `ng build` and `ng test` iteratively and fixed the issues that came up.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Result
+The code was successfully updated to use the new major version of the dependencies and the demo page was working as expected with the new versions of the components.
+It also fixed the tests (which were broken before, because I did not update when i added the demo components).
 
-```bash
-ng generate component component-name
-```
+The complete chat log can be found [here](./chat-log.md).
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
