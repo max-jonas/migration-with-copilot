@@ -2,13 +2,14 @@ import { Component, signal } from '@angular/core';
 import {ButtonModule} from '@ucfw/components/button';
 import {CommonModule} from '@ucfw/common';
 import {AlertModule} from '@ucfw/components/alert';
-import {NewCalendarModule} from '@ucfw/components/new-calendar';
+import {CalendarModule} from '@ucfw/components/calendar';
 import {FormsModule} from '@angular/forms';
-import {TreeSelectElement, TreeSelectModule} from '@ucfw/experimental/tree-select';
+import {Mobiscroll4UModule} from '@ucfw/components/mbsc';
+import {TreeSelectElement, TreeSelectModule} from '@ucfw/components/tree-select';
 
 @Component({
   selector: 'app-root',
-  imports: [ButtonModule, AlertModule, NewCalendarModule, FormsModule, TreeSelectModule],
+  imports: [CommonModule, ButtonModule, AlertModule, CalendarModule, FormsModule, Mobiscroll4UModule, TreeSelectModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
